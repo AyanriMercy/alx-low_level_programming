@@ -4,9 +4,9 @@
  * *_strncpy - copies a string
  * Description: a function that copies the string pointed to by src,
  * including the terminating null byte ('\0'), to the buffer pointed to by dest
- * @dest: destination string
- * @src: appending string
- * @n: number of bytes
+ * @dest: pointer to the destination array where the content is to be copied
+ * @src: string to be copied
+ * @n: number of characters to be copied from source
  * Return: pointer to the destination string dest
  */
 
