@@ -1,13 +1,16 @@
 
 You just released the advanced tasks of this project. Have fun!
+
 0x0B. C - malloc, free
+
 C
 Memory allocation
  By: Julien Barbier
  Weight: 1
- Project will start Apr 11, 2023 6:00 AM, must end by Apr 12, 2023 6:00 AM
- Checker was released at Apr 11, 2023 6:00 AM
- An auto review will be launched at the deadline
+Project will start Apr 11, 2023 6:00 AM, must end by Apr 12, 2023 6:00 AM
+Checker was released at Apr 11, 2023 6:00 AM
+An auto review will be launched at the deadline
+
 Concepts
 For this project, we expect you to look at this concept:
 
@@ -34,6 +37,7 @@ You are tasked to come up with solutions for the tasks below yourself to meet wi
 You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
 You are not allowed to publish any content of this project.
 Any form of plagiarism is strictly forbidden and will result in removal from the program.
+
 Requirements
 General
 Allowed editors: vi, vim, emacs
@@ -49,12 +53,14 @@ You don’t have to push _putchar.c, we will use our file. If you do it won’t 
 In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
 The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called main.h
 Don’t forget to push your header file
+
 More Info
 You do not have to learn about calloc and realloc.
 
 Quiz questions
 Great! You've completed the quiz successfully! Keep going! (Show quiz)
 Tasks
+
 0. Float like a butterfly, sting like a bee
 mandatory
 Write a function that creates an array of chars, and initializes it with a specific char.
@@ -62,7 +68,9 @@ Write a function that creates an array of chars, and initializes it with a speci
 Prototype: char *create_array(unsigned int size, char c);
 Returns NULL if size = 0
 Returns a pointer to the array, or NULL if it fails
+
 julien@ubuntu:~/0x0a. malloc, free$ cat 0-main.c 
+
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -114,7 +122,9 @@ int main(void)
     free(buffer);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-create_array.c -o a
+
 julien@ubuntu:~/0x0a. malloc, free$ ./a 
 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48
 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48
@@ -126,9 +136,10 @@ julien@ubuntu:~/0x0a. malloc, free$ ./a
 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48
 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48
 0x48 0x48 0x48 0x48 0x48 0x48 0x48 0x48
-julien@ubuntu:~/0x0a. malloc, free$ 
-Repo:
 
+julien@ubuntu:~/0x0a. malloc, free$ 
+
+Repo:
 GitHub repository: alx-low_level_programming
 Directory: 0x0B-malloc_free
 File: 0-create_array.c
@@ -144,6 +155,7 @@ On success, the _strdup function returns a pointer to the duplicated string. It 
 FYI: The standard library provides a similar function: strdup. Run man strdup to learn more.
 
 julien@ubuntu:~/0x0a. malloc, free$ cat 1-main.c
+
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -167,10 +179,14 @@ int main(void)
     free(s);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-strdup.c -o s
+
 julien@ubuntu:~/0x0a. malloc, free$ ./s 
 ALX SE
+
 julien@ubuntu:~/0x0a. malloc, free$ 
+
 Repo:
 
 GitHub repository: alx-low_level_programming
@@ -185,7 +201,9 @@ Prototype: char *str_concat(char *s1, char *s2);
 The returned pointer should point to a newly allocated space in memory which contains the contents of s1, followed by the contents of s2, and null terminated
 if NULL is passed, treat it as an empty string
 The function should return NULL on failure
+
 julien@ubuntu:~/0x0a. malloc, free$ cat 2-main.c
+
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -209,10 +227,14 @@ int main(void)
     free(s);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-str_concat.c -o c
+
 julien@ubuntu:~/c/curriculum_by_julien/holbertonschool-low_level_programming/0x0a. malloc, free$ ./c | cat -e
 Betty Holberton$
+
 julien@ubuntu:~/c/curriculum_by_julien/holbertonschool-low_level_programming/0x0a. malloc, free$ 
+
 Repo:
 
 GitHub repository: alx-low_level_programming
@@ -227,7 +249,9 @@ Prototype: int **alloc_grid(int width, int height);
 Each element of the grid should be initialized to 0
 The function should return NULL on failure
 If width or height is 0 or negative, return NULL
+
 julien@ubuntu:~/0x0a. malloc, free$ cat 3-main.c
+
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -280,7 +304,9 @@ int main(void)
     print_grid(grid, 6, 4);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c 3-alloc_grid.c -o g
+
 julien@ubuntu:~/0x0a. malloc, free$ ./g
 0 0 0 0 0 0 
 0 0 0 0 0 0 
@@ -291,7 +317,9 @@ julien@ubuntu:~/0x0a. malloc, free$ ./g
 0 0 0 0 0 0 
 0 0 0 0 0 0 
 0 0 0 0 402 0 
+
 julien@ubuntu:~/0x0a. malloc, free$
+
 Repo:
 
 GitHub repository: alx-low_level_programming
@@ -304,6 +332,7 @@ Write a function that frees a 2 dimensional grid previously created by your allo
 
 Prototype: void free_grid(int **grid, int height);
 Note that we will compile with your alloc_grid.c file. Make sure it compiles.
+
 julien@ubuntu:~/0x0a. malloc, free$ cat 4-main.c
 #include "main.h"
 #include <stdio.h>
@@ -358,7 +387,9 @@ int main(void)
     free_grid(grid, 4);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 3-alloc_grid.c 4-free_grid.c -o f
+
 julien@ubuntu:~/0x0a. malloc, free$ valgrind ./f
 ==5013== Memcheck, a memory error detector
 ==5013== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
@@ -383,7 +414,9 @@ julien@ubuntu:~/0x0a. malloc, free$ valgrind ./f
 ==5013== 
 ==5013== For counts of detected and suppressed errors, rerun with: -v
 ==5013== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
 julien@ubuntu:~/0x0a. malloc, free$ 
+
 Repo:
 
 GitHub repository: alx-low_level_programming
@@ -398,7 +431,9 @@ Prototype: char *argstostr(int ac, char **av);
 Returns NULL if ac == 0 or av == NULL
 Returns a pointer to a new string, or NULL if it fails
 Each argument should be followed by a \n in the new string
+
 julien@ubuntu:~/0x0a. malloc, free$ cat 100-main.c
+
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -421,7 +456,9 @@ int main(int ac, char *av[])
     free(s);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-main.c 100-argstostr.c -o args
+
 julien@ubuntu:~/0x0a. malloc, free$ ./args I will "show you" how great I am
 ./args
 I
@@ -431,6 +468,7 @@ how
 great
 I
 am
+
 julien@ubuntu:~/0x0a. malloc, free$
 Repo:
 
@@ -449,7 +487,9 @@ The last element of the returned array should be NULL
 Words are separated by spaces
 Returns NULL if str == NULL or str == ""
 If your function fails, it should return NULL
+
 julien@ubuntu:~/0x0a. malloc, free$ cat 101-main.c
+
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -488,12 +528,16 @@ int main(void)
     print_tab(tab);
     return (0);
 }
+
 julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 101-main.c 101-strtow.c -o strtow
+
 julien@ubuntu:~/0x0a. malloc, free$ ./strtow | cat -e
 ALX$
 School$
 #cisfun$
+
 julien@ubuntu:~/0x0a. malloc, free$
+
 Repo:
 
 GitHub repository: alx-low_level_programming
