@@ -1,67 +1,51 @@
 #include "variadic_functions.h"
 
-void print_all(const char * const format, ...);
-
 /**
- * print_all -  prints anything
- * Description: a function that takes a format string and a variable number of
- * arguments, and formats and prints them according to the format string.
- * The format string can include placeholders for the arguments,
- * and the arguments are passed in after the format string.
- * @format: pointer to a const char type, which represents the
- * format string that specifies the format of the output
- * Return: no return value
+ * print_all - prints all arguments passed to it
+ * @format: list of argument types
+ *
+ * Return: void
  */
-
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	char *str_arg;
-	int int_arg;
-	float float_arg;
-	char format_char;
-	int arg_index = 0;
+	va_list arguments;
+	char *tempstring;
+	int i;
 
-	va_start(args, format);
-
-	while (format[arg_index] != '\0')
+	va_start(arguments, format);
+	i = 0;
+	while (format == NULL)
 	{
-		format_char = format[arg_index];
-		switch (format_char)
-		{
-			case 'c':
-				int_arg = va_arg(args, int);
-				printf("%c", int_arg);
-				break;
-			case 'i':
-				int_arg = va_arg(args, int);
-				printf("%d", int_arg);
-				break;
-			case 'f':
-				float_arg = va_arg(args, double);
-				printf("%f", float_arg);
-				break;
-			case 's':
-				str_arg = va_arg(args, char*);
-				if (str_arg == NULL)
-				{
-					printf("(nil)");
-				}
-				else
-				{
-					printf("%s", str_arg);
-					break;
-				}
-		}
-		arg_index++;
-		if (format[arg_index] != '\0' && (format[arg_index] == 'c' ||
-					format[arg_index] == 'i' ||
-					format[arg_index] == 'f' ||
-					format[arg_index] == 's'))
-		{
-			printf(", ");
-		}
+		printf("\n");
+		return;
 	}
-	va_end(args);
+	while (format[i] != '\0')
+	{
+		switch (format[i])
+		{
+		case 'c':
+			printf("%c", (char) va_arg(arguments, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(arguments, int));
+			break;
+		case 'f':
+			printf("%f", (float) va_arg(arguments, double));
+			break;
+		case 's':
+			tempstring = va_arg(arguments, char*);
+			if (tempstring != NULL)
+			{
+				printf("%s", tempstring);
+				break;
+			}
+			printf("(nil)");
+			break;
+		}
+		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
+		     format[i] == 's') && format[(i + 1)] != '\0')
+			printf(", ");
+		i++;
+	}
 	printf("\n");
 }
