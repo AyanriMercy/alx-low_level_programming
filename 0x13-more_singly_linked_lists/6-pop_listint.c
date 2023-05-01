@@ -5,15 +5,15 @@
  * @head: double pointer to the head of the list
  * Return: the value of the head node, or 0 if the list is empty
  */
-int pop_listint(listint_t **h)
+int pop_listint(listint_t **head)
 {
 	listint_t *temp;
 	int val = 0;
 
-	if (h && *h)
+	if (head && *head)
 	{
-		temp = *h;
-		*h = temp->next;
+		temp = *head;
+		*head = temp->next;
 		val = temp->n;
 		free(temp);
 	}
