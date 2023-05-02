@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
 
 /**
  * struct listint_s - singly linked list
@@ -45,6 +46,8 @@ typedef struct listint_address
 	struct listint_address *next;
 } listint_addr;
 size_t free_listint_safe(listint_t **h);
+void free_address_list(listint_addr *head);
+listint_addr *add_nodeaddr(listint_addr **head, const listint_t *addr);
 listint_t *find_listint_loop(listint_t *head);
 
 #endif
